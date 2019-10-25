@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Javascript</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript"   src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script>
+			setInterval(function(){alert('Please, use me...');}, 30000);
+			var res;
+            $(document).ready(function(){
+				$("#go").click(function(){
+					if (parseInt($("#gauche").val()) < 0 || parseInt($("#droite").val()) < 0)
+						alert("Error :(");
+					else if ($("#select").val() == "+")
+					{
+						res = parseInt($("#gauche").val()) + parseInt($("#droite").val());
+						alert(res);
+                        console.log(res);
+					}
+					else if ($("#select").val() == "-")
+					{
+						res = parseInt($("#gauche").val()) - parseInt($("#droite").val());
+						alert(res);
+                        console.log(res);
+					}
+					else if ($("#select").val() == "*")
+					{
+						res = parseInt($("#gauche").val()) * parseInt($("#droite").val());
+						alert(res);
+                        console.log(res);
+					}
+					else if ($("#select").val() == "/")
+					{
+						if (parseInt($("#droite").val()) == 0)
+							alert("It’s over 9000!");
+						else
+						{
+							res = parseInt($("#gauche").val()) / parseInt($("#droite").val());
+							alert(res);
+                        	console.log(res);
+						}
+					}
+					else if ($("#select").val() == "%")
+					{
+						if (parseInt($("#droite").val()) == 0)
+							alert("It’s over 9000!");
+						else
+						{
+							res = parseInt($("#gauche").val()) % parseInt($("#droite").val());
+							alert(res);
+                        	console.log(res);
+						}
+					}
+					
+				
+				})	
+			});
+        </script>
+    </head>
+    <body>
+            <input id="gauche" type="text" ></input>
+            <select id="select">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+        <input id="droite" type="text" ></input>
+        <input type="submit" id ="go" value="Try me!"></input>
+    </body>
+</html>

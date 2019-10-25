@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript</title>
+        <script>
+            function changeSize(){
+                el = document.getElementById("ball");
+                if (parseFloat(el.style.width) <= 420 && parseFloat(el.style.height) <= 420)
+                {
+                    el.style.width = (parseFloat(el.style.width) + 10) + "px";
+                    el.style.height = (parseFloat(el.style.height) + 10) + "px";
+                }
+                else
+                {
+                    el.style.width = "200px";
+                    el.style.height = '200px';
+                }
+                if (el.style.backgroundColor === 'red')
+                    el.style.backgroundColor = 'green';
+                else if (el.style.backgroundColor === 'green')
+                    el.style.backgroundColor = 'blue';
+                else if (el.style.backgroundColor === 'blue')
+                    el.style.backgroundColor = 'red';
+            }
+            function mouse(){
+                el = document.getElementById("ball");
+                if (parseFloat(el.style.width) >= 205)
+                    el.style.width = (parseFloat(el.style.width) - 5) + "px";
+                if (parseFloat(el.style.height) >= 205)
+                    el.style.height = (parseFloat(el.style.height) - 5) + "px";
+                if (el.style.backgroundColor === 'red')
+                    el.style.backgroundColor = 'blue';
+                else if (el.style.backgroundColor === 'blue')
+                    el.style.backgroundColor = 'green';
+                else if (el.style.backgroundColor === 'green')
+                    el.style.backgroundColor = 'red';
+            }
+        </script>
+    </head>
+    <body>
+        <div onmouseleave="mouse()" onclick="changeSize()" id="ball" style="width: 200px; height: 200px; background-color: red;border-radius: 50%;"></div>
+    </body>
+
+
+</html>

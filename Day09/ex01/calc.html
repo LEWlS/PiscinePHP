@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Javascript</title>
+		<meta charset="UTF-8">
+        <script>
+            setInterval(function(){alert('Please, use me...');}, 30000)
+            function op(){
+                g = document.getElementById("gauche").value;
+                d = document.getElementById("droite").value;
+                ope = document.getElementById("select").value;
+                if (parseInt(g) >= 0 && parseInt(d) >= 0)
+                {
+                    if(ope === '+')
+                    {
+                        res = parseInt(g) + parseInt(d);
+                        alert(res);
+                        console.log(res);
+                    }
+                    if(ope === '-')
+                    {
+                        res = parseInt(g) - parseInt(d);
+                        alert(res);
+                        console.log(res);
+                    }
+                    if(ope === '*')
+                    {
+                        res = parseInt(g) * parseInt(d);
+                        alert(res);
+                        console.log(res);
+                    }
+                    if(ope === '/')
+                    {
+                        if(parseInt(d) > 0)
+                        {
+                            res = parseInt(g) / parseInt(d);
+                            alert(res);
+                            console.log(res);
+                        }
+                        else
+                        {
+                            alert("It’s over 9000!");
+                            console.log("It’s over 9000!");
+                        }
+                    }
+                    if(ope === '%')
+                    {
+                        if (parseInt(d) > 0)
+                        {
+                            res = parseInt(g) % parseInt(d);
+                            alert(res);
+                            console.log(res);
+                        }
+                        else
+                        {
+                            alert("It’s over 9000!");
+                            console.log("It’s over 9000!");
+                        }
+                    }
+                }
+                else
+                {
+                    alert('Error :(');
+                }
+            }
+        </script>
+    </head>
+    <body>
+            <input id="gauche" type="text" ></input>
+            <select id="select">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+        <input id="droite" type="text" ></input>
+        <input onclick="op()" type="submit" value="Try me!"></input>
+    </body>
+</html>

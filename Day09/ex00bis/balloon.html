@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<title>Javascript</title>
+		<style>
+		.red{
+			background-color: red;
+		}
+		.green{
+			background-color: green;
+		}
+		.blue{
+			background-color: blue;
+		}
+		</style>
+		<script type="text/javascript"   src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script>
+			$(document).ready(function(){
+				$("#ball").click(function(){
+					$(this).animate({height: $(this).height() + 10, width: $(this).width() + 10});
+					if($(this).hasClass('red'))
+					{
+						$(this).removeClass('red');
+						$(this).addClass('green');
+					}
+					else if($(this).hasClass('green'))
+					{
+						$(this).removeClass('green');
+						$(this).addClass('blue');
+					}
+					else if($(this).hasClass('blue'))
+					{
+						$(this).removeClass('blue');
+						$(this).addClass('red');
+					}
+					if ($(this).width() > 420 || $(this).height() > 420)
+					{
+						console.log("wtf");
+						$(this).width(200);
+						$(this).height(200);
+					}
+				});
+				$('#ball').mouseleave(function(){
+					if($(this).width() > 200 || $(this).height() > 200)
+						$(this).animate({height: $(this).height() - 5, width: $(this).width() - 5});
+					if($(this).hasClass('red'))
+					{
+						$(this).removeClass('red');
+						$(this).addClass('blue');
+					}
+					else if($(this).hasClass('green'))
+					{
+						$(this).removeClass('green');
+						$(this).addClass('red');
+					}
+					else if($(this).hasClass('blue'))
+					{
+						$(this).removeClass('blue');
+						$(this).addClass('green');
+					}
+				});
+
+			});
+        </script>
+    </head>
+    <body>
+        <div  id="ball" class="red" style="width: 200px; height: 200px;border-radius: 50%;"></div>
+    </body>
+
+
+</html>
